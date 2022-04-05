@@ -1,0 +1,22 @@
+.navbar{
+    background-color: white;
+    border-bottom: grey;
+    display: flex;
+    justify-content:baseline;
+}
+
+.logo{
+    height: 40%;
+    width: 40%;
+}
+
+.navbar-links{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links-item{
+    margin: 0;
+    padding: 5px;
+    display: inline-block;
+}
