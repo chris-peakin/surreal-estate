@@ -1,28 +1,28 @@
-import "../styles/App.css";
-import React, { Link, Route, Switch } from 'react';
-// import Switch from 'react-router-dom';
+import '../styles/App.css';
+import React, { Link, Route, Switch, Router } from 'react';
 import NavBar from './NavBarComponent';
-import AddProperty from "./AddPropertyComponent";
+import AddProperty from './AddPropertyComponent';
 
 function App() {
+
   return (
-    <>
+    <Router>
       <h2>Surreal Estate</h2>
       <NavBar>
         <Link className="item" to="/">
           View Properties
         </Link>
-        <Link className="item" to="add-property">
+        <Link className="item" to="/add-property">
           Add Properties
         </Link>
       </NavBar>
       <Switch>
-        <Route exact path="/" />
-        <Route exact path="/add-property" component={Properties}>
-          <AddProperty />
-        </Route>
+        <Route exact path="/" component={Properties} />
       </Switch>
-    </>
+      <Route exact path="/add-property">
+        <AddProperty />
+      </Route>
+    </Router>
   );
 }
 
