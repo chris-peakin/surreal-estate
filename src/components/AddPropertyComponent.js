@@ -28,7 +28,7 @@ function AddProperty() {
   return (
     <div className="AddProperty">
       <form onSubmit={handleAddProperty} className="Form">
-        <div className="PropertyTitle">
+        <div className="FormRule">
           <input
             id="title"
             name="title"
@@ -37,7 +37,7 @@ function AddProperty() {
             placeholder="property title"
           />
         </div>
-        <div className="CityAndType">
+        <div className="FormRule">
           <label htmlFor="city">
             <select
               id="city"
@@ -69,7 +69,7 @@ function AddProperty() {
             </select>
           </label>
         </div>
-        <div className="BedsBathsAndPrice">
+        <div className="FormRule">
           <input
             id="bedrooms"
             name="bedrooms"
@@ -92,7 +92,7 @@ function AddProperty() {
             placeholder="property price"
           />
         </div>
-        <div className="Email">
+        <div className="FormRule">
           <input
             id="email"
             name="email"
