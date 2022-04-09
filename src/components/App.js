@@ -1,10 +1,11 @@
-import '../styles/App.css';
-import React, { Link, Route, Switch, Router } from 'react';
-import NavBar from './NavBarComponent';
-import AddProperty from './AddPropertyComponent';
+import "../styles/App.css";
+import React from "react";
+import { Link, Route, Switch, BrowserRouter as Router } from "react-router-dom";
+import NavBar from "./NavBarComponent";
+import AddProperty from "./AddPropertyComponent";
+import Properties from "./PropertiesComponent";
 
 function App() {
-
   return (
     <Router>
       <h2>Surreal Estate</h2>
@@ -18,10 +19,10 @@ function App() {
       </NavBar>
       <Switch>
         <Route exact path="/" component={Properties} />
+        <Route exact path="/add-property">
+          <AddProperty />
+        </Route>
       </Switch>
-      <Route exact path="/add-property">
-        <AddProperty />
-      </Route>
     </Router>
   );
 }
