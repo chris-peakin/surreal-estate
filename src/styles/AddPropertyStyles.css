@@ -1,0 +1,13 @@
+.AddProperty {
+  padding: 5px;
+}
+
+.Form {
+  display: grid;
+}
+
+.Email {
+  align-items: flex-end;
+  align-items: center;
+  width: 200px;
+}
