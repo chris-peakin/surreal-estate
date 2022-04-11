@@ -20,7 +20,7 @@
 }
 
 input {
-  min-width: 0;
+  min-width: 5;
 }
 
 select {
