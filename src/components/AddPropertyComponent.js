@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/AddPropertyStyles.css";
+import Alert from "./AlertComponent";
 
 const axios = require("axios").default;
 
@@ -14,21 +15,34 @@ function AddProperty() {
       price: "",
       email: "",
     },
+    alert: {
+      message: "",
+      isSuccess: false,
+    },
   };
 
+  const [alert, setAlert] = useState(initialState.alert);
   const [fields, setFields] = useState(initialState.fields);
 
   function handleAddProperty(event) {
     event.preventDefault();
-    console.log(fields);
-    axios.post("http://localhost:4000/api/v1/PropertyListing/", {
-      title: fields.title,
-      type: fields.type,
-      bedrooms: parseInt(fields.bedrooms, 10),
-      bathrooms: parseInt(fields.bathrooms, 10),
-      price: parseInt(fields.price, 10),
-      email: fields.email,
-    });
+    setAlert({ message: "", isSuccess: false });
+    axios
+      .post("http://localhost:4000/api/v1/PropertyListing/", {
+        title: fields.title,
+        type: fields.type,
+        bedrooms: parseInt(fields.bedrooms, 10),
+        bathrooms: parseInt(fields.bathrooms, 10),
+        price: parseInt(fields.price, 10),
+        email: fields.email,
+      })
+      .then(() => setAlert({ message: "Property Added", isSuccess: true }))
+      .catch(() =>
+        setAlert({
+          message: "Server error. Please try again later.",
+          isSuccess: false,
+        })
+      );
   }
 
   const handleFieldChange = (event) => {
@@ -38,6 +52,7 @@ function AddProperty() {
   return (
     <div className="AddProperty">
       <form onSubmit={handleAddProperty} className="Form">
+        <Alert message={alert.message} success={alert.isSuccess} />
         <div className="FormRule">
           <input
             id="title"

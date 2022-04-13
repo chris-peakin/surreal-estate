@@ -1,0 +1,15 @@
+.alert-success {
+  text-align: center;
+  color: aliceblue;
+  border: solid green 2px;
+  background-color: green;
+  border-radius: 5%;
+}
+
+.alert-error {
+  text-align: center;
+  color: aliceblue;
+  border: solid red 2px;
+  background-color: red;
+  border-radius: 5%;
+}
