@@ -1,8 +1,7 @@
-import { render, screen } from '@testing-library/react';
-import App from '../components/App';
+import { render } from "@testing-library/react";
+import App from "../components/App";
 
-test('renders the text surreal estate', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/surreal estate/i);
-  expect(linkElement).toBeInTheDocument();
+test("renders the app correctly", () => {
+  const { asFragment } = render(<App />);
+  expect(asFragment()).toMatchSnapshot;
 });
