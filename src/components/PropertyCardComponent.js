@@ -3,29 +3,29 @@ import "../styles/PropertyCardStyles.css";
 import PropTypes from "prop-types";
 
 function PropertyCard(props) {
-  const { houseInfo } = props;
+  const { title, type, city, bathrooms, bedrooms, price, email } = props;
   return (
     <div className="property-card" data-testid="property-card">
       <div className="title" data-testid="property-card__title">
-        {houseInfo.title}
+        {title}
       </div>
       <div className="type-city" data-testid="property-card__type">
-        {houseInfo.type}
+        {type}
       </div>
       <div className="type-city" data-testid="property-card__city">
-        {houseInfo.city}
+        {city}
       </div>
       <div className="bathrooms" data-testid="property-card__bathrooms">
-        Bathrooms: {houseInfo.bathrooms}
+        Bathrooms: {bathrooms}
       </div>
       <div className="bedrooms" data-testid="property-card__bedrooms">
-        Bedrooms: {houseInfo.bedrooms}
+        Bedrooms: {bedrooms}
       </div>
       <div className="price" data-testid="property-card__price">
-        £{houseInfo.price}
+        £{price}
       </div>
       <div className="email" data-testid="property-card__email">
-        <a href={`mailto:${houseInfo.email}`}>Send email</a>
+        <a href={`mailto:${email}`}>Send email</a>
       </div>
     </div>
   );
@@ -34,15 +34,11 @@ function PropertyCard(props) {
 export default PropertyCard;
 
 PropertyCard.propTypes = {
-  houseInfo: PropTypes.objectOf(
-    PropTypes.shape({
-      title: PropTypes.string,
-      type: PropTypes.string,
-      city: PropTypes.string,
-      bathrooms: PropTypes.number,
-      bedrooms: PropTypes.number,
-      price: PropTypes.number,
-      email: PropTypes.string,
-    })
-  ).isRequired,
+  title: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  city: PropTypes.string.isRequired,
+  bathrooms: PropTypes.number.isRequired,
+  bedrooms: PropTypes.number.isRequired,
+  price: PropTypes.number.isRequired,
+  email: PropTypes.string.isRequired,
 };

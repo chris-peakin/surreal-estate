@@ -1,0 +1,13 @@
+.individual-properties {
+    display: flex;
+    flex-flow: wrap;
+}
+
+.col {
+    border: 1px solid purple;
+    gap: 10px;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 33.33%;
+    padding: 0.5rem;
+}
