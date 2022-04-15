@@ -12,7 +12,7 @@ function Properties() {
     },
   };
   const [properties, setProperties] = useState([]);
-  const [alert, setAlert] = useState(initialState.message);
+  const [alert, setAlert] = useState(initialState.alert);
 
   useEffect(() => {
     axios
@@ -24,13 +24,18 @@ function Properties() {
   }, []);
 
   return (
-    <div className="individual_properties">
-      {properties.map((property) => (
-        <div key={property._id} className="col">
-          <PropertyCard {...property} />
-        </div>
-      ))}
-    </div>
+    <>
+      <div>
+        <Alert message={alert.message} success={alert.isSuccess} />
+      </div>
+      <div className="individual_properties">
+        {properties.map((property) => (
+          <div key={property._id} className="col">
+            <PropertyCard {...property} />
+          </div>
+        ))}
+      </div>
+    </>
   );
 }
 
