@@ -28,13 +28,13 @@ exports[`PropertyCard renders correctly 1`] = `
       class="bathrooms"
       data-testid="property-card__bathrooms"
     >
-      1
+      Bathrooms: 1
     </div>
     <div
       class="bedrooms"
       data-testid="property-card__bedrooms"
     >
-      2
+      Bedrooms: 2
     </div>
     <div
       class="price"

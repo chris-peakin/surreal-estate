@@ -16,10 +16,10 @@ function PropertyCard(props) {
         {houseInfo.city}
       </div>
       <div className="bathrooms" data-testid="property-card__bathrooms">
-        {houseInfo.bathrooms}
+        Bathrooms: {houseInfo.bathrooms}
       </div>
       <div className="bedrooms" data-testid="property-card__bedrooms">
-        {houseInfo.bedrooms}
+        Bedrooms: {houseInfo.bedrooms}
       </div>
       <div className="price" data-testid="property-card__price">
         £{houseInfo.price}

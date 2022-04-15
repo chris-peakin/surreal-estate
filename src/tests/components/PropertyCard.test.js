@@ -31,6 +31,6 @@ describe("PropertyCard", () => {
   });
 
   test("renders correct value for props", () => {
-    expect(getByText(houseInfo.title)).toHaveClass("property-card__title");
+    expect(getByText(houseInfo.title)).toHaveClass("title");
   });
 });
