@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`properties page renders 1`] = `
+<DocumentFragment>
+  <div />
+  <div
+    class="individual_properties"
+  />
+</DocumentFragment>
+`;

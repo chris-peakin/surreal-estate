@@ -1,0 +1,12 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    background-color: white;
+    border-bottom: gray;
+    align-items: left;
+}
+
+Link {
+    text-decoration: inherit;
+}
