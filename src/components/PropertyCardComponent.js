@@ -5,14 +5,26 @@ import PropTypes from "prop-types";
 function PropertyCard(props) {
   const { houseInfo } = props;
   return (
-    <div className="property-card">
-      <div className="title">{houseInfo.title}</div>
-      <div className="type-city">{houseInfo.type}</div>
-      <div className="type-city">{houseInfo.city}</div>
-      <div className="bathrooms">{houseInfo.bathrooms}</div>
-      <div className="bedrooms">{houseInfo.bedrooms}</div>
-      <div className="price">£{houseInfo.price}</div>
-      <div className="email">
+    <div className="property-card" data-testid="property-card">
+      <div className="title" data-testid="property-card__title">
+        {houseInfo.title}
+      </div>
+      <div className="type-city" data-testid="property-card__type">
+        {houseInfo.type}
+      </div>
+      <div className="type-city" data-testid="property-card__city">
+        {houseInfo.city}
+      </div>
+      <div className="bathrooms" data-testid="property-card__bathrooms">
+        {houseInfo.bathrooms}
+      </div>
+      <div className="bedrooms" data-testid="property-card__bedrooms">
+        {houseInfo.bedrooms}
+      </div>
+      <div className="price" data-testid="property-card__price">
+        £{houseInfo.price}
+      </div>
+      <div className="email" data-testid="property-card__email">
         <a href={`mailto:${houseInfo.email}`}>Send email</a>
       </div>
     </div>
