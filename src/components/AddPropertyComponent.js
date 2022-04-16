@@ -8,8 +8,8 @@ function AddProperty() {
   const initialState = {
     fields: {
       title: "",
-      city: "Manchester",
-      type: "Detached",
+      city: "Leeds",
+      type: "Terraced",
       bedrooms: "",
       bathrooms: "",
       price: "",
@@ -30,6 +30,7 @@ function AddProperty() {
     axios
       .post("http://localhost:4000/api/v1/PropertyListing/", {
         title: fields.title,
+        city: fields.city,
         type: fields.type,
         bedrooms: parseInt(fields.bedrooms, 10),
         bathrooms: parseInt(fields.bathrooms, 10),

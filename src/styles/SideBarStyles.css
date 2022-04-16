@@ -1,5 +1,6 @@
 a { 
     color: black;
+    font-weight: bold;
 }
 
 .sidebar {
@@ -9,8 +10,5 @@ a {
     background-color: white;
     border-bottom: gray;
     align-items: left;
-}
-
-Link {
-    text-decoration: inherit;
+    gap: 5px;
 }

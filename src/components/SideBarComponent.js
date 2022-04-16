@@ -1,5 +1,5 @@
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useLocation, useHistory } from "react-router-dom";
 import qs from "qs";
 import "../styles/SideBarStyles.css";
 
@@ -18,8 +18,29 @@ function SideBar() {
     });
   }
 
+  const [query, setQuery] = useState("");
+
+  const history = useHistory();
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+    const newQueryString = buildQueryString("query", {
+      title: { $regex: query },
+    });
+    history.push(newQueryString);
+  };
+
   return (
     <div className="sidebar">
+      <form onSubmit={handleSearch}>
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Property title search..."
+        />
+        <button type="submit">Search</button>
+      </form>
       <Link to={buildQueryString("query", { city: "Manchester" })}>
         Manchester
       </Link>
