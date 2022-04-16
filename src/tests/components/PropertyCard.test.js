@@ -1,3 +1,4 @@
+import React from "react";
 import { render } from "@testing-library/react";
 import PropertyCard from "../../components/PropertyCardComponent";
 
@@ -12,9 +13,7 @@ describe("PropertyCard", () => {
     email: "joebloggs@gmail.com",
   };
 
-  const { asFragment, getByText, getByTestId } = render(
-    <PropertyCard houseInfo={houseInfo} />
-  );
+  const { asFragment } = render(<PropertyCard houseInfo={houseInfo} />);
 
   test("renders correctly", () => {
     expect(asFragment()).toMatchSnapshot();
@@ -28,9 +27,5 @@ describe("PropertyCard", () => {
     expect(houseInfo.price).toBe(100000);
     expect(houseInfo.city).toBe("Manchester");
     expect(houseInfo.email).toBe("joebloggs@gmail.com");
-  });
-
-  test("renders correct value for props", () => {
-    expect(getByText(houseInfo.title)).toHaveClass("title");
   });
 });
