@@ -43,7 +43,7 @@ exports[`PropertyCard renders correctly 1`] = `
       <a
         href="mailto:undefined"
       >
-        Send email
+        SEND EMAIL
       </a>
     </div>
   </div>

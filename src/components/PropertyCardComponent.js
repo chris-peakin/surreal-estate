@@ -25,7 +25,7 @@ function PropertyCard(props) {
         £{price}
       </div>
       <div className="email" data-testid="property-card__email">
-        <a href={`mailto:${email}`}>Send email</a>
+        <a href={`mailto:${email}`}>SEND EMAIL</a>
       </div>
     </div>
   );

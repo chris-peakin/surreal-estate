@@ -1,6 +1,5 @@
 a {
   text-decoration: none;
-  /* color: white; */
 }
 
 .email a {
@@ -13,10 +12,6 @@ a {
   flex-direction: column;
   padding: 2px;
   gap: 5px;
-}
-
-.card-item{
-  text-decoration: none;
 }
 
 .email {
