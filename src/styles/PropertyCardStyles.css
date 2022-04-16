@@ -1,3 +1,12 @@
+a {
+  text-decoration: none;
+  /* color: white; */
+}
+
+.email a {
+  color: white;
+}
+
 .property-card {
   font-weight: bold;
   display: flex;
@@ -6,14 +15,11 @@
   gap: 5px;
 }
 
-.type-city {
-  display: flex;
-  flex-direction: column;
+.card-item{
+  text-decoration: none;
 }
 
 .email {
-  text-decoration: none;
-  color: white;
   border: 2px solid rgba(128, 0, 128, 0.419);
   background-color: rgba(128, 0, 128, 0.419);
 }

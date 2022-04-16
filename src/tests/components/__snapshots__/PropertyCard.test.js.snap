@@ -7,31 +7,31 @@ exports[`PropertyCard renders correctly 1`] = `
     data-testid="property-card"
   >
     <div
-      class="title"
+      class="card-item"
       data-testid="property-card__title"
     />
     <div
-      class="type-city"
+      class="card-item"
       data-testid="property-card__type"
     />
     <div
-      class="type-city"
+      class="card-item"
       data-testid="property-card__city"
     />
     <div
-      class="bathrooms"
+      class="card-item"
       data-testid="property-card__bathrooms"
     >
       Bathrooms: 
     </div>
     <div
-      class="bedrooms"
+      class="card-item"
       data-testid="property-card__bedrooms"
     >
       Bedrooms: 
     </div>
     <div
-      class="price"
+      class="card-item"
       data-testid="property-card__price"
     >
       £

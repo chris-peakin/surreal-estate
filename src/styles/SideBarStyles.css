@@ -1,3 +1,7 @@
+a { 
+    color: black;
+}
+
 .sidebar {
     display: flex;
     flex-direction: column;
