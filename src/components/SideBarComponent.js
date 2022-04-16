@@ -4,12 +4,15 @@ import qs from "qs";
 import "../styles/SideBarStyles.css";
 
 function SideBar() {
+  const { search } = useLocation();
   function buildQueryString(operation, valueObj) {
-    const { search } = useLocation();
     const currentQueryParams = qs.parse(search, { ignoreQueryPrefix: true });
     const newQueryParams = {
       ...currentQueryParams,
-      [operation]: JSON.stringify(valueObj),
+      [operation]: JSON.stringify({
+        ...JSON.parse(currentQueryParams[operation] || "{}"),
+        ...valueObj,
+      }),
     };
 
     return qs.stringify(newQueryParams, {
