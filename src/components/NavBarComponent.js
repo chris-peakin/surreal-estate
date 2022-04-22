@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+import { FacebookLogin } from "react-facebook-login";
 import { Link } from "react-router-dom";
 import "../styles/NavBarStyles.css";
 
 function NavBar() {
+  const [userId, setUserId] = useState("");
+
+  const onLogin = (response) => {
+    setUserId(response.userID);
+  };
+
+  const onLogout = () => {
+    window.FB.logout(setUserId(""));
+  };
+
   return (
     <div className="navbar">
       <img
@@ -22,6 +33,11 @@ function NavBar() {
           </Link>
         </li>
       </ul>
+      {(userId && (
+        <button type="submit" onClick={onLogout}>
+          Sign Out
+        </button>
+      )) || <FacebookLogin appId="564065984911435" callback={onLogin} />}
     </div>
   );
 }
