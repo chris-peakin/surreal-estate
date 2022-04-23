@@ -1,20 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import FacebookLogin from "react-facebook-login";
 import { Link } from "react-router-dom";
 import "../styles/NavBarStyles.css";
+import PropTypes from "prop-types";
 
-function NavBar() {
-  const [userId, setUserId] = useState("");
-
-  const onLogin = (response) => {
-    setUserId(response.userID);
-  };
-
-  const onLogout = () => {
-    window.FB.logout();
-    setUserId("");
-  };
-
+function NavBar({ userId, onLogin, onLogout }) {
   return (
     <div className="navbar">
       <img
@@ -51,3 +41,9 @@ function NavBar() {
 }
 
 export default NavBar;
+
+NavBar.propTypes = {
+  userId: PropTypes.number,
+  onLogin: PropTypes.func,
+  onLogout: PropTypes.func,
+}.isRequired;

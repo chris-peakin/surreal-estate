@@ -2,11 +2,12 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import "../styles/PropertiesStyles.css";
+import PropTypes from "prop-types";
 import PropertyCard from "./PropertyCardComponent";
 import Alert from "./AlertComponent";
 import SideBar from "./SideBarComponent";
 
-function Properties() {
+function Properties({ userId }) {
   const initialState = {
     alert: {
       message: "",
@@ -15,6 +16,13 @@ function Properties() {
   };
   const [properties, setProperties] = useState([]);
   const [alert, setAlert] = useState(initialState.alert);
+
+  function handleSaveProperty(propertyId) {
+    axios.post("http://localhost:4000/api/v1/Favourite", {
+      propertyListing: propertyId,
+      fbUserId: userId,
+    });
+  }
 
   useEffect(() => {
     axios
@@ -45,7 +53,12 @@ function Properties() {
       <div className="individual_properties">
         {properties.map((property) => (
           <div key={property._id} className="col">
-            <PropertyCard {...property} />
+            <PropertyCard
+              {...property}
+              userId={userId}
+              // eslint-disable-next-line react/jsx-no-bind
+              onSaveProperty={handleSaveProperty}
+            />
           </div>
         ))}
       </div>
@@ -54,3 +67,7 @@ function Properties() {
 }
 
 export default Properties;
+
+Properties.propTypes = {
+  userId: PropTypes.number.isRequired,
+};
