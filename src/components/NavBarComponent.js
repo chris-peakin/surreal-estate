@@ -11,7 +11,8 @@ function NavBar() {
   };
 
   const onLogout = () => {
-    window.FB.logout(setUserId(""));
+    window.FB.logout();
+    setUserId("");
   };
 
   return (
@@ -40,6 +41,7 @@ function NavBar() {
       )) || (
         <FacebookLogin
           appId="564065984911435"
+          autoLoad
           callback={onLogin}
           textButton="Login"
         />
