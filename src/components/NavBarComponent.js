@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FacebookLogin } from "react-facebook-login";
+import FacebookLogin from "react-facebook-login";
 import { Link } from "react-router-dom";
 import "../styles/NavBarStyles.css";
 
@@ -37,7 +37,13 @@ function NavBar() {
         <button type="submit" onClick={onLogout}>
           Sign Out
         </button>
-      )) || <FacebookLogin appId="564065984911435" callback={onLogin} />}
+      )) || (
+        <FacebookLogin
+          appId="564065984911435"
+          callback={onLogin}
+          textButton="Login"
+        />
+      )}
     </div>
   );
 }
