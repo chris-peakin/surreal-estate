@@ -44,22 +44,24 @@ function SideBar() {
         />
         <button type="submit">Search</button>
       </form>
-      <Link to={buildQueryString("query", { city: "Manchester" })}>
-        Manchester
-      </Link>
-      <Link to={buildQueryString("query", { city: "Leeds" })}>Leeds</Link>
-      <Link to={buildQueryString("query", { city: "Sheffield" })}>
-        Sheffield
-      </Link>
-      <Link to={buildQueryString("query", { city: "Liverpool" })}>
-        Liverpool
-      </Link>
-      <Link to={buildQueryString("sort", { price: 1 })}>
-        Sort By Price Ascending
-      </Link>
-      <Link to={buildQueryString("sort", { price: -1 })}>
-        Sort By Price Descending
-      </Link>
+      <div>
+        Sort By City:
+        <Link to={buildQueryString("query", { city: "Manchester" })}>
+          Manchester
+        </Link>
+        <Link to={buildQueryString("query", { city: "Leeds" })}>Leeds</Link>
+        <Link to={buildQueryString("query", { city: "Sheffield" })}>
+          Sheffield
+        </Link>
+        <Link to={buildQueryString("query", { city: "Liverpool" })}>
+          Liverpool
+        </Link>
+      </div>
+      <div>
+        Sort By Price:
+        <Link to={buildQueryString("sort", { price: 1 })}>Ascending</Link>
+        <Link to={buildQueryString("sort", { price: -1 })}>Descending</Link>
+      </div>
     </div>
   );
 }

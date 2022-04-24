@@ -4,10 +4,10 @@
 }
 
 .col {
-    border: 1px solid purple;
-    gap: 10px;
+    border: 2px solid purple;
     display: inline-block;
     box-sizing: border-box;
-    width: 33.33%;
+    width: 30%;
     padding: 0.5rem;
+    margin: 10px;
 }

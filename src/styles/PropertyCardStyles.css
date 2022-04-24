@@ -11,10 +11,5 @@ a {
   display: flex;
   flex-direction: column;
   padding: 2px;
-  gap: 5px;
-}
-
-.email {
-  border: 2px solid rgba(128, 0, 128, 0.419);
-  background-color: rgba(128, 0, 128, 0.419);
-}
+  gap: 2px;
+};

@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/PropertyCardStyles.css";
 import PropTypes from "prop-types";
+import { FaBed, FaBath, FaPoundSign, FaHouseUser } from "react-icons/fa";
 
 function PropertyCard({
   _id,
@@ -17,33 +18,36 @@ function PropertyCard({
   return (
     <div className="property-card" data-testid="property-card">
       <div className="card-item" data-testid="property-card__title">
-        {title}
+        <FaHouseUser /> {title}
       </div>
       <div className="card-item" data-testid="property-card__type">
-        {type}
-      </div>
-      <div className="card-item" data-testid="property-card__city">
-        {city}
+        {type} - {city}
       </div>
       <div className="card-item" data-testid="property-card__bathrooms">
-        Bathrooms: {bathrooms}
+        <FaBath /> {bathrooms}
       </div>
       <div className="card-item" data-testid="property-card__bedrooms">
-        Bedrooms: {bedrooms}
+        <FaBed /> {bedrooms}
       </div>
       <div className="card-item" data-testid="property-card__price">
-        £{price}
+        <FaPoundSign /> {price}
       </div>
-      <div className="email" data-testid="property-card__email">
-        <a href={`mailto:${email}`}>SEND EMAIL</a>
+      <div className="save" data-testid="property-card__email">
+        <form action={`mailto:${email}`}>
+          <button type="submit">Send Email</button>
+        </form>
       </div>
-      {userId && (
-        // eslint-disable-next-line jsx-a11y/anchor-is-valid
-        <a href="#" onClick={() => onSaveProperty(_id)} className="save">
-          <i className="fas fa-star" />
-          Save Me!
-        </a>
-      )}
+      <div className="save">
+        {userId && (
+          <button
+            type="submit"
+            onClick={() => onSaveProperty(_id)}
+            className="save"
+          >
+            Add To Favourites
+          </button>
+        )}
+      </div>
     </div>
   );
 }

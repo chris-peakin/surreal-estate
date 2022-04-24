@@ -24,18 +24,20 @@ function NavBar({ userId, onLogin, onLogout }) {
           </Link>
         </li>
       </ul>
-      {(userId && (
-        <button type="submit" onClick={onLogout}>
-          Sign Out
-        </button>
-      )) || (
-        <FacebookLogin
-          appId="564065984911435"
-          autoLoad
-          callback={onLogin}
-          textButton="Login"
-        />
-      )}
+      <div className="login-button">
+        {(userId && (
+          <button type="submit" onClick={onLogout}>
+            Sign Out
+          </button>
+        )) || (
+          <FacebookLogin
+            appId="564065984911435"
+            autoLoad
+            callback={onLogin}
+            textButton="Login"
+          />
+        )}
+      </div>
     </div>
   );
 }
