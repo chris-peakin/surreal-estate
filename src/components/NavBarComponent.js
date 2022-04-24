@@ -24,11 +24,16 @@ function NavBar({ userId, onLogin, onLogout }) {
             Add a Property
           </Link>
         </li>
+        <li className="navbar-links-item">
+          <Link className="navbar-links-link" to="/saved-properties">
+            Favourite Properties
+          </Link>
+        </li>
       </ul>
       <div className="login-button">
         {(userId && (
           <button type="submit" onClick={onLogout}>
-            <GiExitDoor />
+            <GiExitDoor /> Logout
           </button>
         )) || (
           <FacebookLogin

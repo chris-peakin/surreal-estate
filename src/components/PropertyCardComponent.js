@@ -7,6 +7,7 @@ import {
   FaPoundSign,
   FaHouseUser,
   FaHeart,
+  FaCity,
 } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 
@@ -28,7 +29,7 @@ function PropertyCard({
         <FaHouseUser /> {title}
       </div>
       <div className="card-item" data-testid="property-card__type">
-        {type} - {city}
+        <FaCity /> {type} - {city}
       </div>
       <div className="card-item" data-testid="property-card__bathrooms">
         <FaBath /> {bathrooms}
@@ -65,14 +66,14 @@ function PropertyCard({
 export default PropertyCard;
 
 PropertyCard.propTypes = {
-  _id: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-  city: PropTypes.string.isRequired,
-  bathrooms: PropTypes.number.isRequired,
-  bedrooms: PropTypes.number.isRequired,
-  price: PropTypes.number.isRequired,
-  email: PropTypes.string.isRequired,
-  userId: PropTypes.number.isRequired,
-  onSaveProperty: PropTypes.func.isRequired,
-};
+  _id: PropTypes.number,
+  title: PropTypes.string,
+  type: PropTypes.string,
+  city: PropTypes.string,
+  bathrooms: PropTypes.number,
+  bedrooms: PropTypes.number,
+  price: PropTypes.number,
+  email: PropTypes.string,
+  userId: PropTypes.number,
+  onSaveProperty: PropTypes.func,
+}.isRequired;

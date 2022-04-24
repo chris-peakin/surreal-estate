@@ -4,6 +4,7 @@ import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import NavBar from "./NavBarComponent";
 import AddProperty from "./AddPropertyComponent";
 import Properties from "./PropertiesComponent";
+import SavedProperties from "./SavedProperties";
 
 function App() {
   const [userId, setUserId] = useState("");
@@ -28,6 +29,9 @@ function App() {
         />
         <Route exact path="/add-property">
           <AddProperty />
+        </Route>
+        <Route exact path="/saved-properties">
+          <SavedProperties />
         </Route>
       </Switch>
     </Router>
