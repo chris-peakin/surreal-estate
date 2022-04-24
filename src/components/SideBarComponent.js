@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useLocation, useHistory } from "react-router-dom";
 import qs from "qs";
 import "../styles/SideBarStyles.css";
+import { FaSearchLocation } from "react-icons/fa";
 
 function SideBar() {
   const { search } = useLocation();
@@ -42,7 +43,9 @@ function SideBar() {
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Property title search..."
         />
-        <button type="submit">Search</button>
+        <button type="submit">
+          <FaSearchLocation />
+        </button>
       </form>
       <div>
         Sort By City:

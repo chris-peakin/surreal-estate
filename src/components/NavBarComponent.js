@@ -3,6 +3,7 @@ import FacebookLogin from "react-facebook-login";
 import { Link } from "react-router-dom";
 import "../styles/NavBarStyles.css";
 import PropTypes from "prop-types";
+import { GiExitDoor } from "react-icons/gi";
 
 function NavBar({ userId, onLogin, onLogout }) {
   return (
@@ -27,7 +28,7 @@ function NavBar({ userId, onLogin, onLogout }) {
       <div className="login-button">
         {(userId && (
           <button type="submit" onClick={onLogout}>
-            Sign Out
+            <GiExitDoor />
           </button>
         )) || (
           <FacebookLogin

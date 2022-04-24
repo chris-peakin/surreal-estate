@@ -1,7 +1,14 @@
 import React from "react";
 import "../styles/PropertyCardStyles.css";
 import PropTypes from "prop-types";
-import { FaBed, FaBath, FaPoundSign, FaHouseUser } from "react-icons/fa";
+import {
+  FaBed,
+  FaBath,
+  FaPoundSign,
+  FaHouseUser,
+  FaHeart,
+} from "react-icons/fa";
+import { FiMail } from "react-icons/fi";
 
 function PropertyCard({
   _id,
@@ -34,7 +41,10 @@ function PropertyCard({
       </div>
       <div className="save" data-testid="property-card__email">
         <form action={`mailto:${email}`}>
-          <button type="submit">Send Email</button>
+          <button type="submit">
+            <FiMail />
+            Send Email
+          </button>
         </form>
       </div>
       <div className="save">
@@ -44,7 +54,7 @@ function PropertyCard({
             onClick={() => onSaveProperty(_id)}
             className="save"
           >
-            Add To Favourites
+            <FaHeart /> Add To Favourites
           </button>
         )}
       </div>
