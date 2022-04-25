@@ -29,7 +29,7 @@ function PropertyCard({
         <FaHouseUser /> {title}
       </div>
       <div className="card-item" data-testid="property-card__type">
-        <FaCity /> {type} - {city}
+        <FaCity /> {city} - {type}
       </div>
       <div className="card-item" data-testid="property-card__bathrooms">
         <FaBath /> {bathrooms}

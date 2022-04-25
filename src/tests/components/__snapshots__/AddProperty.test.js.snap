@@ -1,0 +1,147 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`add properties component renders correctly 1`] = `
+<div
+  className="AddProperty"
+>
+  <form
+    className="Form"
+    onSubmit={[Function]}
+  >
+    <div
+      className="FormRule"
+    >
+      <input
+        id="title"
+        name="title"
+        onChange={[Function]}
+        placeholder="property title"
+        value=""
+      />
+    </div>
+    <div
+      className="FormRule"
+    >
+      <label
+        htmlFor="city"
+      >
+        <select
+          id="city"
+          name="city"
+          onChange={[Function]}
+          placeholder="city"
+          value="Leeds"
+        >
+          <option
+            value="Manchester"
+          >
+            Manchester
+          </option>
+          <option
+            value="Leeds"
+          >
+            Leeds
+          </option>
+          <option
+            value="Sheffield"
+          >
+            Sheffield
+          </option>
+          <option
+            value="Liverpool"
+          >
+            Liverpool
+          </option>
+        </select>
+      </label>
+      <label
+        htmlFor="type"
+      >
+        <select
+          id="type"
+          name="type"
+          onChange={[Function]}
+          value="Terraced"
+        >
+          <option
+            value="Detached"
+          >
+            Detached
+          </option>
+          <option
+            value="Semi-Detached"
+          >
+            Semi-Detached
+          </option>
+          <option
+            value="Terraced"
+          >
+            Terraced
+          </option>
+          <option
+            value="End of Terrace"
+          >
+            End of Terrace
+          </option>
+          <option
+            value="Cottage"
+          >
+            Cottage
+          </option>
+          <option
+            value="Bungalow"
+          >
+            Bungalow
+          </option>
+          <option
+            value="Flat"
+          >
+            Flat
+          </option>
+        </select>
+      </label>
+    </div>
+    <div
+      className="FormRule"
+    >
+      <input
+        id="bedrooms"
+        name="bedrooms"
+        onChange={[Function]}
+        placeholder="no. of bedrooms"
+        value=""
+      />
+      <input
+        id="bathrooms"
+        name="bathrooms"
+        onChange={[Function]}
+        placeholder="no. of bathrooms"
+        value=""
+      />
+      <input
+        id="price"
+        name="price"
+        onChange={[Function]}
+        placeholder="property price"
+        value=""
+      />
+    </div>
+    <div
+      className="FormRule"
+    >
+      <input
+        id="email"
+        name="email"
+        onChange={[Function]}
+        placeholder="your email eg. joe.bloggs@gmail.com"
+        value=""
+      />
+    </div>
+    <button
+      type="submit"
+    >
+      Add Your Property
+    </button>
+  </form>
+</div>
+`;

@@ -18,5 +18,5 @@ test("displays a success message", () => {
 
 test("does not render an error or a success message if message props is empty", () => {
   const { asFragment } = render(<Alert message="" />);
-  expect(alert).toMatchSnapshot();
+  expect(asFragment).toMatchSnapshot();
 });

@@ -30,7 +30,11 @@ function App() {
         <Route exact path="/add-property">
           <AddProperty />
         </Route>
-        <Route exact path="/saved-properties">
+        <Route
+          exact
+          path="/saved-properties"
+          render={(props) => <SavedProperties {...props} userId={userId} />}
+        >
           <SavedProperties />
         </Route>
       </Switch>

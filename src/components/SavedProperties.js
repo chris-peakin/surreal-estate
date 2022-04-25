@@ -30,17 +30,29 @@ function SavedProperties({ userId }) {
   }
 
   return (
-    <div className="individual_properties">
-      {properties.map((property) => (
-        <div key={property._id}>
-          <SavedPropertyCard
-            {...property}
-            userId={userId}
-            // eslint-disable-next-line react/jsx-no-bind
-            onRemoveProperty={handleRemoveProperty}
-          />
+    // Currently not quite working to plan. It should render the top half if userId
+    // evaluates to true, but so far this is not quite working. Work in progress.
+    <div>
+      {(userId && (
+        <div>
+          {properties.map((property) => (
+            <div key={property._id}>
+              <SavedPropertyCard
+                {...property}
+                userId={userId}
+                // eslint-disable-next-line react/jsx-no-bind
+                onRemoveProperty={handleRemoveProperty}
+              />
+            </div>
+          ))}
         </div>
-      ))}
+      )) || (
+        <div>
+          Either you are logged out of Facebook or you have not saved any
+          properties yet. Please login to Facebook and/or add some new
+          properties to your favourites using the links at the top.{" "}
+        </div>
+      )}
     </div>
   );
 }
