@@ -34,9 +34,7 @@ function App() {
           exact
           path="/saved-properties"
           render={(props) => <SavedProperties {...props} userId={userId} />}
-        >
-          <SavedProperties />
-        </Route>
+        />
       </Switch>
     </Router>
   );

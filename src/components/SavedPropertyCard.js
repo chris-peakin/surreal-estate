@@ -2,12 +2,11 @@ import React from "react";
 import { FaHeartBroken } from "react-icons/fa";
 import PropTypes from "prop-types";
 
-function SavedPropertyCard(_id, title, city, onRemoveProperty) {
+function SavedPropertyCard(props) {
+  const { title, _id, onRemoveProperty } = props;
   return (
     <>
-      <div>
-        {title} - {city}
-      </div>
+      <div>{title}</div>
       <div>
         <button
           type="submit"
@@ -24,8 +23,7 @@ function SavedPropertyCard(_id, title, city, onRemoveProperty) {
 export default SavedPropertyCard;
 
 SavedPropertyCard.propTypes = {
-  _id: PropTypes.number,
+  _id: PropTypes.string,
   title: PropTypes.string,
-  city: PropTypes.string,
   onRemoveProperty: PropTypes.func,
 }.isRequired;
