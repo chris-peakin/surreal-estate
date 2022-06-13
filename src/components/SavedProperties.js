@@ -12,6 +12,8 @@ function SavedProperties({ userId }) {
   };
   const [properties, setProperties] = useState([]);
   const [alert, setAlert] = useState(initialState.alert);
+  // eslint-disable-next-line no-console
+  console.log(alert);
 
   useEffect(() => {
     axios
@@ -27,7 +29,6 @@ function SavedProperties({ userId }) {
         setAlert({ message: "Axios promise rejected", isSuccess: false })
       );
   }, []);
-
 
   function handleRemoveProperty(propertyId) {
     axios.delete(`http://localhost:4000/api/v1/Favourite:${propertyId}`, {

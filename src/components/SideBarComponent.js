@@ -65,6 +65,9 @@ function SideBar() {
         <Link to={buildQueryString("sort", { price: 1 })}>Ascending</Link>
         <Link to={buildQueryString("sort", { price: -1 })}>Descending</Link>
       </div>
+      <div>
+        <Link to="/">Reset</Link>
+      </div>
     </div>
   );
 }
